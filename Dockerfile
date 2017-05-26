@@ -7,5 +7,7 @@ ENV maria_url=https://code.mariadb.com/connectors/java/connector-java-${maria_ja
 
 ENV server_root_path=/opt/solr/server
 ENV lib_path=${server_root_path}/lib
+ENV maria_jar_pathname=${server_root_path}/lib/${maria_jar}
 
-ADD ${maria_url} ${lib_path}
+RUN curl -L -o "${maria_jar_pathname}" "${maria_url}" && \
+  chown solr:solr "${maria_jar_pathname}"
