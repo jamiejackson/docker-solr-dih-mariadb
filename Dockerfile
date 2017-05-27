@@ -9,5 +9,5 @@ ENV server_root_path=/opt/solr/server
 ENV lib_path=${server_root_path}/lib
 ENV maria_jar_pathname=${server_root_path}/lib/${maria_jar}
 
-RUN curl -L -o "${maria_jar_pathname}" "${maria_url}" && \
-  chown solr:solr "${maria_jar_pathname}"
+USER ${SOLR_USER}
+RUN curl -L -o "${maria_jar_pathname}" "${maria_url}"
