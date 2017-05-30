@@ -6,7 +6,6 @@ ENV maria_jar=mariadb-java-client-${maria_jar_version}.jar
 ENV maria_url=https://code.mariadb.com/connectors/java/connector-java-${maria_jar_version}/${maria_jar}
 
 ENV server_root_path=/opt/solr/server
-ENV lib_path=${server_root_path}/lib
 ENV maria_jar_pathname=${server_root_path}/lib/${maria_jar}
 
 USER ${SOLR_USER}
